@@ -2,9 +2,7 @@
 <meta charset="utf-8">
 <meta content="width=device-width, initial-scale=1.0" name="viewport">
 <title>InfoSOStenibile - Progetto Ambiente</title>
-<!-- Tailwind CSS Setup -->
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<!-- Theme Configuration -->
 <script id="tailwind-config">
       tailwind.config = {
         darkMode: "class",
@@ -116,35 +114,27 @@
         }
       }
     </script>
-<!-- Fonts and Icons -->
 <link href="https://fonts.googleapis.com" rel="preconnect">
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700;9..40,800&amp;family=JetBrains+Mono&amp;display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com" rel="preconnect">
 <style>
+        html { scroll-behavior: smooth; }
         body { font-family: 'DM Sans', sans-serif; }
         .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
         .material-symbols-filled { font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
     </style>
 </head>
 <body class="bg-background text-text-primary antialiased min-h-screen flex flex-col selection:bg-primary-container selection:text-on-primary">
-<!-- TopNavBar Component -->
 <nav class="w-full sticky top-0 z-50 bg-surface/80 backdrop-blur-md">
 <div class="flex justify-between items-center px-lg py-md max-w-container-max mx-auto">
-<!-- Brand -->
 <a class="font-page-title text-page-title font-bold text-primary dark:text-primary flex items-center gap-sm" href="#"><span class="material-symbols-outlined text-[32px] text-primary-container" data-icon="energy_savings_leaf">energy_savings_leaf</span>Alessandro Rigon</a>
-<!-- Navigation Links -->
-<div class="hidden md:flex items-center gap-xl"><a class="text-primary font-bold border-b-2 border-primary pb-1 font-body text-body hover:text-primary transition-colors duration-200" href="#">Il Progetto</a><a class="text-on-surface-variant font-medium font-body text-body hover:text-primary transition-colors duration-200" href="#">Analisi Dati</a><a class="text-on-surface-variant font-medium font-body text-body hover:text-primary transition-colors duration-200" href="#">Il Mio Ruolo</a><a class="text-on-surface-variant font-medium font-body text-body hover:text-primary transition-colors duration-200" href="#">Festival</a><a class="text-on-surface-variant font-medium font-body text-body hover:text-primary transition-colors duration-200" href="#">Competenze</a></div>
-<!-- Trailing Action -->
-<a href="relazione.pdf" download class="bg-primary-container text-on-primary rounded-full px-xl py-sm font-label text-label uppercase tracking-widest scale-105 transition-transform hover:bg-primary-hover shadow-[0_0_15px_rgba(29,185,84,0.3)]">Scarica Relazione</a>
+<div class="hidden md:flex items-center gap-xl"><a class="text-primary font-bold border-b-2 border-primary pb-1 font-body text-body hover:text-primary transition-colors duration-200" href="#progetto">Il Progetto</a><a class="text-on-surface-variant font-medium font-body text-body hover:text-primary transition-colors duration-200" href="#analisi">Analisi Dati</a><a class="text-on-surface-variant font-medium font-body text-body hover:text-primary transition-colors duration-200" href="#ruolo">Il Mio Ruolo</a><a class="text-on-surface-variant font-medium font-body text-body hover:text-primary transition-colors duration-200" href="#festival">Festival</a><a class="text-on-surface-variant font-medium font-body text-body hover:text-primary transition-colors duration-200" href="#competenze">Competenze</a></div>
+<a class="bg-primary-container text-on-primary rounded-full px-xl py-sm font-label text-label uppercase tracking-widest scale-105 transition-transform hover:bg-primary-hover shadow-[0_0_15px_rgba(29,185,84,0.3)]" href="relazione.pdf" download="">Leggi Relazione</a>
 </div>
 </nav>
-<!-- Main Content Canvas -->
 <main class="flex-grow w-full max-w-container-max mx-auto px-xxl pt-hero pb-hero">
-<!-- Hero Section (Bento Grid Style) -->
-<div class="grid grid-cols-1 lg:grid-cols-12 gap-xl min-h-[716px]">
-<!-- Left Text Content -->
+<div id="progetto" class="grid grid-cols-1 lg:grid-cols-12 gap-xl min-h-[716px]">
 <div class="lg:col-span-7 flex flex-col justify-center space-y-xl z-10">
 <div class="inline-flex items-center gap-sm bg-surface-elevated px-md py-xs rounded-full w-fit border border-border-subtle">
 <span class="material-symbols-outlined text-success text-[16px]" data-icon="verified" data-weight="fill">verified</span>
@@ -155,20 +145,13 @@
 </h1>
 <p class="font-body text-body text-neutral-text max-w-2xl leading-relaxed text-lg">Il progetto, nato dalla collaborazione con la redazione giornalistica di InfoSOStenibile, ha avuto un obiettivo chiaro: trasformare i dati in consapevolezza ambientale. Tutto è iniziato ad aprile con un'indagine sul campo per mappare le abitudini dei nostri coetanei (dal riciclo al consumo idrico ed energetico). La risposta è stata eccezionale, fornendoci un campione statistico solido di 318 risposte su cui costruire la nostra inchiesta.</p>
 <div class="flex items-center gap-md pt-lg">
-<a href="relazione.pdf" download class="bg-primary-container text-on-primary rounded-full h-12 px-xl font-label text-label uppercase tracking-widest hover:scale-105 transition-transform duration-200 flex items-center gap-sm"><span class="material-symbols-outlined" data-icon="download">download</span>SCARICA RELAZIONE</a>
-<button class="border border-outline-variant text-text-primary rounded-full h-12 px-xl font-label text-label uppercase tracking-widest hover:bg-surface-elevated transition-colors duration-200">
-                        Leggi l'Articolo
-                    </button>
+<a class="bg-primary-container text-on-primary rounded-full h-12 px-xl font-label text-label uppercase tracking-widest hover:scale-105 transition-transform duration-200 flex items-center gap-sm" href="relazione.pdf" download=""><span class="material-symbols-outlined" data-icon="download">download</span>LEGGI RELAZIONE</a>
 </div>
 </div>
-<!-- Right Image/Visuals -->
 <div class="lg:col-span-5 relative flex flex-col gap-xl">
-<!-- Main Hero Image Area -->
 <div class="relative w-full h-[400px] lg:h-[500px] rounded-xl overflow-hidden bg-surface group">
 <div class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent z-10"></div>
 <div class="w-full h-full flex items-center justify-center bg-surface-container-high border-2 border-dashed border-outline-variant rounded-xl group-hover:border-primary transition-colors duration-500"><img src="img/scuoleinfestival.png" class="w-full h-full object-cover rounded-xl"></div>
-<!-- Floating Stat Badge overlay -->
-
 </div><div class="flex flex-row gap-4 mt-4 justify-end">
   <div class="bg-surface-overlay/90 backdrop-blur-md p-md rounded-lg border border-border-subtle shadow-2xl flex items-center gap-md">
     <div class="bg-primary-container/20 p-sm rounded-full text-success">
@@ -187,10 +170,8 @@
     </div>
   </div>
 </div>
-<!-- Secondary Bento Data Card -->
-
 </div>
-</div><section class="mt-section py-section border-t border-border-subtle">
+</div><section id="analisi" class="mt-section py-section border-t border-border-subtle">
 <div class="grid grid-cols-1 lg:grid-cols-2 gap-xxl items-center">
 <div class="space-y-xl">
 <h2 class="font-section-title text-section-title text-text-primary uppercase tracking-tight">Dall'analisi dei dati all'articolo di giornale</h2>
@@ -212,18 +193,15 @@
 </div>
 </section>
 </main>
-<!-- Footer Component -->
-<section class="w-full max-w-container-max mx-auto px-xxl py-section border-t border-border-subtle">
+<section id="ruolo" class="w-full max-w-container-max mx-auto px-xxl py-section border-t border-border-subtle">
 <div class="grid grid-cols-1 lg:grid-cols-2 gap-xxl items-center">
-<!-- Left Column: Image Placeholder -->
 <img src="img/grafico.png" alt="Grafico Datawrapper" class="w-full aspect-video lg:h-[400px] object-contain rounded-lg">
-<!-- Right Column: Text Content -->
 <div class="flex flex-col gap-xl">
 <h2 class="font-page-title text-page-title text-text-primary">
                 Data Visualization: Dare forma ai numeri
             </h2>
 <p class="font-body text-body text-neutral-text leading-relaxed text-lg">
-                All'interno del gruppo, mi sono occupato personalmente della realizzazione grafica dei dati. Per farlo, ho dovuto studiare e imparare a utilizzare un software a me del tutto nuovo: Datawrapper.
+                All'interno del gruppo, mi sono occupato personally della realizzazione grafica dei dati. Per farlo, ho dovuto studiare e imparare a utilizzare un software a me del tutto nuovo: Datawrapper.
             </p>
 <ul class="space-y-md">
 <li class="flex items-start gap-sm">
@@ -242,15 +220,12 @@
 </div>
 </div>
 </section>
-<!-- New Section: L'Esposizione al Festival di Bergamo -->
-<section class="w-full max-w-container-max mx-auto px-xxl py-section border-t border-border-subtle">
+<section id="festival" class="w-full max-w-container-max mx-auto px-xxl py-section border-t border-border-subtle">
 <div class="grid grid-cols-1 lg:grid-cols-2 gap-xxl items-center">
-<!-- Left Column: Images -->
 <div class="flex flex-col gap-lg w-full">
 <img src="img/microfono2.jpg" alt="Primo Piano al microfono" class="w-full aspect-video lg:h-[400px] object-cover rounded-lg">
 <img src="img/microfono1.png" alt="Presentazione Festival di Bergamo - Panoramica" class="w-full aspect-video lg:h-[400px] object-cover rounded-lg">
 </div>
-<!-- Right Column: Text Content -->
 <div class="flex flex-col justify-center gap-lg h-full">
 <h2 class="font-page-title text-page-title text-text-primary">
       L'Esposizione al Festival di Bergamo
@@ -264,21 +239,19 @@
 </div>
 </div>
 </section>
-<section class="w-full max-w-container-max mx-auto px-xxl py-section border-t border-border-subtle">
+<section id="competenze" class="w-full max-w-container-max mx-auto px-xxl py-section border-t border-border-subtle">
 <div class="space-y-xxl">
 <h2 class="font-section-title text-section-title text-text-primary uppercase tracking-tight">competenze acquisite</h2>
 <div class="grid grid-cols-1 md:grid-cols-2 gap-lg">
-<!-- Card 1 -->
 <div class="bg-surface p-xl rounded-xl border border-border-subtle flex flex-col gap-sm hover:border-primary/50 transition-colors duration-300">
 <span class="material-symbols-outlined text-success text-3xl">groups</span>
 <div class="space-y-xs">
 <h3 class="font-card-title text-card-title text-text-primary font-bold">Teamwork e Collaborazione</h3>
 <p class="font-body text-body text-text-secondary">
-            Ho imparato l'importanza della sinergia, supportando i compagni in difficoltá e dividendo i compiti in base alle competenze specifiche di ognuno.
+            Ho imparato l'importanza della sinergia, supportando i compagni in difficoltà e dividendo i compiti in base alle competenze specifiche di ognuno.
           </p>
 </div>
 </div>
-<!-- Card 2 -->
 <div class="bg-surface p-xl rounded-xl border border-border-subtle flex flex-col gap-sm hover:border-primary/50 transition-colors duration-300">
 <span class="material-symbols-outlined text-success text-3xl">assignment</span>
 <div class="space-y-xs">
@@ -288,7 +261,6 @@
           </p>
 </div>
 </div>
-<!-- Card 3 -->
 <div class="bg-surface p-xl rounded-xl border border-border-subtle flex flex-col gap-sm hover:border-primary/50 transition-colors duration-300">
 <span class="material-symbols-outlined text-success text-3xl">record_voice_over</span>
 <div class="space-y-xs">
@@ -298,7 +270,6 @@
           </p>
 </div>
 </div>
-<!-- Card 4 -->
 <div class="bg-surface p-xl rounded-xl border border-border-subtle flex flex-col gap-sm hover:border-primary/50 transition-colors duration-300">
 <span class="material-symbols-outlined text-success text-3xl">devices</span>
 <div class="space-y-xs">
@@ -311,8 +282,4 @@
 </div>
 </div>
 </section>
-
-
-
-
 </body></html>
