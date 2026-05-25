@@ -223,7 +223,7 @@
 </li>
 <li class="flex items-start gap-sm">
 <span class="material-symbols-outlined text-success mt-1">check_circle</span>
-<span class="font-body text-body text-text-primary">Ho creato un istogramma personalizzato per rappresentare il numero di risposte ricevute.</span>
+<span class="font-body text-body text-text-primary">Ho creato un istogramma personalizzato per representare il numero di risposte ricevute.</span>
 </li>
 <li class="flex items-start gap-sm">
 <span class="material-symbols-outlined text-success mt-1">check_circle</span>
@@ -247,12 +247,12 @@
       Il nostro articolo è stato selezionato dagli esperti di InfoSOStenibile per essere pubblicato all'interno della loro rivista ufficiale. L'elaborato ha subito un'opera di rephrasing e alcune modifiche a livello grafico per adattarsi agli standard editoriali.
     </p>
 <p class="font-body text-body text-neutral-text leading-relaxed text-lg">
-      Il progetto ha raggiunto il suo apice al Festival della Sostenibilità a Bergamo. Durante questo evento, ho avuto l'opportunità di salire sul palco ed esporre públicamente gli articoli del nostro liceo, affiancato da altri compagni delle classi terze.
+      Il progetto ha raggiunto il suo apice al Festival della Sostenibilità a Bergamo. Durante questo evento, ho avuto l'opportunità di salire sul palco ed esporre pubblicamente gli articoli del nostro liceo, affiancato da altri compagni delle classi terze.
     </p>
 </div>
 </div>
 </section>
-<section id="competenze" class="w-full max-w-container-max mx-auto px-xxl py-section border-t border-border-subtle scroll-mt-24">
+<section id="competenze" class="w-full max-w-container-max mx-auto px-xxl py-section pb-32 border-t border-border-subtle scroll-mt-24">
 <div class="space-y-xxl">
 <h2 class="font-section-title text-section-title text-text-primary uppercase tracking-tight">competenze acquisite</h2>
 <div class="grid grid-cols-1 md:grid-cols-2 gap-lg">
@@ -261,7 +261,7 @@
 <div class="space-y-xs">
 <h3 class="font-card-title text-card-title text-text-primary font-bold">Teamwork e Collaborazione</h3>
 <p class="font-body text-body text-text-secondary">
-            Ho imparato l'importanza della sinergia, supportando i compagni in difficoltà e dividendo i compiti in base alle competenze specifiche di ognuno.
+            Ho imparato l'importance della sinergia, supportando i compagni in difficoltà e dividendo i compiti in base alle competenze specifiche di ognuno.
           </p>
 </div>
 </div>
@@ -300,25 +300,44 @@
     document.addEventListener('DOMContentLoaded', () => {
         const sections = document.querySelectorAll('div[id], section[id]');
         const navLinks = document.querySelectorAll('#nav-links a');
+        let isClickScrolling = false;
 
+        const setActiveClass = (id) => {
+            navLinks.forEach((link) => {
+                link.classList.remove('nav-link-active');
+                if (link.getAttribute('href') === `#${id}`) {
+                    link.classList.add('nav-link-active');
+                }
+            });
+        };
+
+        // Gestione scorrimento automatico con Intersection Observer
         const changeActiveLink = () => {
-            let index = sections.length;
+            if (isClickScrolling) return; // Disattiva temporaneamente durante il clic diretto
 
-            // Rileva quale sezione si trova attualmente nella parte alta dello schermo
+            let index = sections.length;
             while(--index && window.scrollY + 150 < sections[index].offsetTop) {}
             
-            navLinks.forEach((link) => link.classList.remove('nav-link-active'));
             if (sections[index]) {
-                const activeLink = document.querySelector(`#nav-links a[href="#${sections[index].id}"]`);
-                if (activeLink) {
-                    activeLink.classList.add('nav-link-active');
-                }
+                setActiveClass(sections[index].id);
             }
         };
 
-        // Esegui la funzione allo scorrimento della pagina
+        // Gestione del Clic Diretto sui Link
+        navLinks.forEach(link => {
+            link.addEventListener('click', (e) => {
+                isClickScrolling = true;
+                const targetId = link.getAttribute('href').substring(1);
+                setActiveClass(targetId);
+
+                // Riattiva il controllo dello scroll automatico dopo che l'animazione di movimento è finita
+                setTimeout(() => {
+                    isClickScrolling = false;
+                }, 800);
+            });
+        });
+
         window.addEventListener('scroll', changeActiveLink);
-        // Esegui una volta all'avvio per impostare lo stato iniziale
         changeActiveLink();
     });
 </script>
